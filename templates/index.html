@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stemmer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>Stemmer</h1>
+    <p class="sub">Separe voz, bateria, baixo e outros instrumentos de qualquer música.</p>
+
+    <label id="zona" for="entrada">
+      <strong>Arraste músicas para cá</strong>
+      <span>ou clique para escolher (mp3, wma, wav, flac, m4a, aac, ogg)</span>
+      <input id="entrada" type="file" accept=".mp3,.wma,.wav,.flac,.m4a,.aac,.ogg,audio/*" multiple hidden>
+    </label>
+    <p id="aviso" role="status"></p>
+
+    <h2>Músicas enviadas</h2>
+    <ul id="enviadas" class="lista"></ul>
+
+    <h2>Músicas processadas</h2>
+    <ul id="processadas" class="lista"></ul>
+  </main>
+
+  <script>const STEMS = {{ stems | tojson }};</script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

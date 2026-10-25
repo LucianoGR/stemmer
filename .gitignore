@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.DS_Store
+# Arquivos pesados / dados do usuário (músicas têm direitos autorais)
+uploads/
+outputs/
+musics/
